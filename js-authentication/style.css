@@ -1,0 +1,117 @@
+:root {
+  /* color */
+  --background-color: #f5f6f7;
+  --main-clor: #03c75a;
+  --green-color: #19ce60;
+  --login-box-color: #f7f9fa;
+  --border-color: #dae1e6;
+  --placeholder-color: #c4c4c4;
+
+  /* img */
+  --background-size: 200% auto;
+  --naver-main-logo-position: 0px -162px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+ul {
+  padding-left: 0;
+}
+li {
+  list-style: none;
+}
+
+/* HEADER */
+.header {
+  border-bottom: 1px solid var(--border-color);
+}
+.header-logoAndSearch {
+  border-bottom: 1px solid var(--border-color);
+  height: 160px;
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.header-logoAndSearch .logo {
+  background: url("./images/main-image.png") no-repeat;
+  background-size: var(--background-size);
+  width: 222px;
+  height: 52px;
+  background-position: var(--naver-main-logo-position);
+  margin-right: 1.5em;
+}
+.search-bar {
+  width: 582px;
+  height: 52px;
+  background-color: white;
+  border: 2px solid var(--main-clor);
+  padding: 13px 15px;
+}
+.search-bar input {
+  font-size: 24px;
+  width: 90%;
+  height: 24px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+}
+.search-btn {
+  background: var(--main-clor);
+  width: 56px;
+  height: 52px;
+  outline: none;
+  border: none;
+}
+.search-btn:hover {
+  cursor: pointer;
+}
+.search-image {
+  background: url("./images/main-image.png") no-repeat;
+  background-size: 440px 410px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-position: -204px -386px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.menu ul {
+  display: flex;
+  font-weight: bold;
+  font-size: 18px;
+}
+.menu ul .type_fix {
+  display: flex;
+  color: var(--main-clor);
+}
+.list__nav {
+  margin-right: 1em;
+}
+.list__nav:hover {
+  cursor: pointer;
+}
+
+.weather {
+  width: 270px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather img {
+  width: 90%;
+  height: 45px;
+  user-select: none;
+}
+
+/* MAIN */
