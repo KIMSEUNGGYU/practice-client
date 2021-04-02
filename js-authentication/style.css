@@ -10,6 +10,9 @@
   /* img */
   --background-size: 200% auto;
   --naver-main-logo-position: 0px -162px;
+
+  /* size */
+  --width-size: 1170px;
 }
 
 * {
@@ -115,3 +118,46 @@ li {
 }
 
 /* MAIN */
+.main {
+  display: flex;
+  justify-content: center;
+  width: 1170px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.main--contents {
+  background-color: #c4c4c4;
+  flex: 1 1 75%;
+  height: 100vh;
+  margin-right: 1em;
+}
+
+.main--login {
+  flex: 1 1 25%;
+  height: 120px;
+  background-color: var(--login-box-color);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.main--login span {
+  font-size: 12px;
+  color: grey;
+}
+.main--login .login-btn {
+  width: 100%;
+  height: 3em;
+  background: var(--main-clor);
+  color: white;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+.main--login .login-btn:hover {
+  cursor: pointer;
+}
