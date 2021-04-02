@@ -49,6 +49,9 @@ li {
   background-position: var(--naver-main-logo-position);
   margin-right: 1.5em;
 }
+.header-logoAndSearch .logo:hover {
+  cursor: pointer;
+}
 .search-bar {
   width: 582px;
   height: 52px;
@@ -91,7 +94,7 @@ li {
 .menu ul {
   display: flex;
   font-weight: bold;
-  font-size: 18px;
+  /* font-size: 16px; */
 }
 .menu ul .type_fix {
   display: flex;
@@ -140,8 +143,6 @@ li {
   display: flex;
   flex-direction: column;
   padding: 20px 15px;
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 .main--login span {
   font-size: 12px;
@@ -157,6 +158,7 @@ li {
   border: none;
   border-radius: 2px;
   margin-top: 10px;
+  font-size: 16px;
 }
 .main--login .login-btn:hover {
   cursor: pointer;
