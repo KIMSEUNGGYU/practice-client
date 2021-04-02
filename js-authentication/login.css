@@ -1,0 +1,83 @@
+:root {
+  /* color */
+  --background-color: #f5f6f7;
+  --main-clor: #03c75a;
+  --green-color: #19ce60;
+  --login-box-color: #f7f9fa;
+  --border-color: #dae1e6;
+  --placeholder-color: #c4c4c4;
+  /* #8e8e8e */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: none !important;
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER */
+.header {
+  padding: 105px 0 53px;
+}
+.logo {
+  background: url("./images/pc_sp_login_190522.png") no-repeat;
+  background-position: 0 0;
+  width: 231px;
+  height: 44px;
+}
+.logo:hover {
+  cursor: pointer;
+}
+
+/* Login */
+.login {
+  display: flex;
+  flex-direction: column;
+}
+.login .input-box {
+  width: 470px;
+  height: 48px;
+  background-color: white;
+  margin-bottom: 1em;
+  padding: 7px 35px 10px 11px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+}
+.login .input-box:focus-within {
+  border: 1px solid var(--main-clor);
+}
+.login .input-box input {
+  width: 90%;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+.login .login-btn {
+  background-color: var(--main-clor);
+  color: white;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 56px;
+  font-size: 16px;
+}
+.login .login-btn:hover {
+  cursor: pointer;
+}
+.login .register {
+  align-self: flex-end;
+  margin-top: 12px;
+  color: #8e8e8e;
+}
