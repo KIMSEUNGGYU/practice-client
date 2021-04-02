@@ -42,7 +42,7 @@ li {
   align-items: center;
 }
 .header-logoAndSearch .logo {
-  background: url("./images/main-image.png") no-repeat;
+  background: url("../images/main-image.png") no-repeat;
   background-size: var(--background-size);
   width: 222px;
   height: 52px;
@@ -78,7 +78,7 @@ li {
   cursor: pointer;
 }
 .search-image {
-  background: url("./images/main-image.png") no-repeat;
+  background: url("../images/main-image.png") no-repeat;
   background-size: 440px 410px;
   display: inline-block;
   width: 22px;
