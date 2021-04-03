@@ -8,11 +8,21 @@ function getCookie(name) {
   }
   return null;
 }
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
 function eraseCookie(name) {
   document.cookie = name + "=; Max-Age=-99999999;";
 }
 
 const user = getCookie("userId");
+console.log(user);
 if (user) {
   const loginSection = document.querySelector(".main--login");
   loginSection.innerHTML = `
@@ -23,7 +33,8 @@ if (user) {
   const logoutBtn = document.querySelector(".logout");
   logoutBtn.addEventListener("click", () => {
     console.log("dd");
-    eraseCookie("userId");
+    setCookie("userId", "", "");
+    // eraseCookie("userId");
     history.go(0);
   });
 }
