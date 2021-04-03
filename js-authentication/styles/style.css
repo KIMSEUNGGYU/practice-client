@@ -163,3 +163,15 @@ li {
 .main--login .login-btn:hover {
   cursor: pointer;
 }
+.main--login .logout {
+  align-self: flex-end;
+  color: var(--placeholder-color);
+  background: transparent;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+.main--login .logout:hover {
+  cursor: pointer;
+  color: grey;
+}
