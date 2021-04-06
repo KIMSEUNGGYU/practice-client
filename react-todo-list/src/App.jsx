@@ -47,7 +47,7 @@ function App() {
     <>
       <Global styles={globalStyle} />
       <TodoTemplate>
-        <TodoHead />
+        <TodoHead todos={todos} />
         <TodoList todos={todos} onToggle={onToggle} onDelete={onDelete} />
         <TodoCreate onAdd={onAdd} />
       </TodoTemplate>

@@ -13,11 +13,12 @@ const RestCount = styled.span`
   font-weight: bold;
 `;
 
-const TodoHead = () => {
+const TodoHead = ({ todos }) => {
+  const restCount = todos.filter((todo) => !todo.done).length;
   return (
     <Header>
       <Title>TODO List</Title>
-      <RestCount>할 일 2개 남음</RestCount>
+      <RestCount>할 일 {restCount}개 남음</RestCount>
     </Header>
   );
 };
