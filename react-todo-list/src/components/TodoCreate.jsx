@@ -74,7 +74,7 @@ const CircleButton = styled.button`
 `;
 
 const TodoCreate = ({ onAdd }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const inputRef = useRef();
 
