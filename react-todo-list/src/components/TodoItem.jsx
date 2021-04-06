@@ -1,5 +1,5 @@
 import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 
 import { MdDone, MdDelete } from 'react-icons/md';
@@ -28,6 +28,7 @@ const ItemBlock = styled.div`
     }
   }
 `;
+
 const CheckCircle = styled.div`
   width: 32px;
   height: 32px;
@@ -59,11 +60,18 @@ const Text = styled.div`
     `}
 `;
 
-const TodoItem = ({ done = true }) => {
+const TodoItem = ({ todo, onToggle }) => {
+  const handleToggle = () => {
+    onToggle(todo);
+  };
+
+  const { text, done } = todo;
   return (
     <ItemBlock>
-      <CheckCircle done={done}>{done && <MdDone />}</CheckCircle>
-      <Text done={done}>프로그래밍 학습하기</Text>
+      <CheckCircle done={done} onClick={handleToggle}>
+        {done && <MdDone />}
+      </CheckCircle>
+      <Text done={done}>{text}</Text>
       <RemoveBlock>
         <MdDelete />
       </RemoveBlock>
