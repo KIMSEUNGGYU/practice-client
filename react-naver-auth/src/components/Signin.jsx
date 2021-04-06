@@ -4,7 +4,7 @@ import { Input, Button } from 'antd';
 
 import LogoHeader from '@src/components/LogoHeader';
 
-const LoginBlock = styled.div`
+const ContentsBlock = styled.div`
   margin: 0 auto;
   margin-top: 70px;
   height: 500px;
@@ -14,7 +14,7 @@ const LoginBlock = styled.div`
   align-items: center;
 `;
 
-const LoginMain = styled.main`
+const Main = styled.main`
   width: 100%;
 `;
 
@@ -24,16 +24,16 @@ const InputStyle = styled(Input)`
 
 const Login = () => {
   return (
-    <LoginBlock>
+    <ContentsBlock>
       <LogoHeader />
-      <LoginMain>
+      <Main>
         <InputStyle size="large" placeholder="아이디" />
         <InputStyle size="large" placeholder="비밀번호" type="password" />
         <Button size="large" type="primary" style={{ width: '100%' }}>
-          로그인{' '}
+          로그인
         </Button>
-      </LoginMain>
-    </LoginBlock>
+      </Main>
+    </ContentsBlock>
 
     /* <main style={main}>Login</main>
       <div class="input-box">

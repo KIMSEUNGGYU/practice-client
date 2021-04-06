@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.less';
-import Login from '@components/Login';
+// import SignIn from '@components/Signin';
+// import SignUp from '@components/SignUp';
+import Main from '@components/Main';
 import { css, Global } from '@emotion/react';
 import theme from '@src/theme';
 
@@ -15,7 +17,9 @@ function App() {
   return (
     <>
       <Global styles={globalStyle} />
-      <Login />
+      <Main />
+      {/* <SignUp /> */}
+      {/* <SignIn /> */}
     </>
   );
 }
