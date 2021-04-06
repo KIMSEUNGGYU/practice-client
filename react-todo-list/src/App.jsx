@@ -1,7 +1,8 @@
 import { css, Global } from '@emotion/react';
 
 import TodoTemplate from '@components/TodoTemplate';
-import TodoHead from '@components/TodoHead';
+import TodoHead from '@src/components/TodoHead';
+import TodoList from '@src/components/TodoList';
 
 function App() {
   return (
@@ -16,9 +17,8 @@ function App() {
       />
       <TodoTemplate>
         <TodoHead />
+        <TodoList />
       </TodoTemplate>
-
-      <h1>Hello</h1>
     </>
   );
 }
