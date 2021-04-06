@@ -8,7 +8,7 @@ const Template = styled.div`
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
 
-  /* postion */
+  position: relative;
 
   margin: 0 auto;
   margin-top: 96px;
