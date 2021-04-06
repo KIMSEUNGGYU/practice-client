@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import theme from '@src/theme';
@@ -73,16 +73,30 @@ const CircleButton = styled.button`
     `}
 `;
 
-const TodoCreate = () => {
+const TodoCreate = ({ onAdd }) => {
   const [open, setOpen] = useState(true);
+
+  const inputRef = useRef();
+
   const onToggle = () => setOpen(!open);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    onAdd({
+      id: Date.now(),
+      text: inputRef.current.value,
+      done: false,
+    });
+    // console.log(inputRef.current.value);
+
+    inputRef.current.value = '';
+  };
 
   return (
     <>
       {open && (
         <InsertFormPositioner>
-          <InsertForm>
-            <Input autoFocus placeholder="할 일을 입력 후, Enter 를 누르세요" />
+          <InsertForm onSubmit={onSubmit}>
+            <Input ref={inputRef} autoFocus placeholder="할 일을 입력 후, Enter 를 누르세요" />
           </InsertForm>
         </InsertFormPositioner>
       )}

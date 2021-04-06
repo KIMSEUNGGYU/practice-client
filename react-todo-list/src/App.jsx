@@ -39,13 +39,17 @@ function App() {
     setTodos(todos.filter((item) => item.id !== todo.id));
   };
 
+  const onAdd = (todo) => {
+    setTodos([...todos, todo]);
+  };
+
   return (
     <>
       <Global styles={globalStyle} />
       <TodoTemplate>
         <TodoHead />
         <TodoList todos={todos} onToggle={onToggle} onDelete={onDelete} />
-        <TodoCreate />
+        <TodoCreate onAdd={onAdd} />
       </TodoTemplate>
     </>
   );
