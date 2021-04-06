@@ -10,11 +10,11 @@ const ListTemplate = styled.div`
   overflow-y: auto;
 `;
 
-const TodoList = ({ todos, onToggle }) => {
+const TodoList = ({ todos, onToggle, onDelete }) => {
   return (
     <ListTemplate>
       {todos.map((todo) => (
-        <TodoItem todo={todo} onToggle={onToggle} />
+        <TodoItem todo={todo} onToggle={onToggle} onDelete={onDelete} />
       ))}
     </ListTemplate>
   );

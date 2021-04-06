@@ -35,12 +35,16 @@ function App() {
     setTodos(todos.map((item) => (item.id === todo.id ? { ...item, done: !item.done } : item)));
   };
 
+  const onDelete = (todo) => {
+    setTodos(todos.filter((item) => item.id !== todo.id));
+  };
+
   return (
     <>
       <Global styles={globalStyle} />
       <TodoTemplate>
         <TodoHead />
-        <TodoList todos={todos} onToggle={onToggle} />
+        <TodoList todos={todos} onToggle={onToggle} onDelete={onDelete} />
         <TodoCreate />
       </TodoTemplate>
     </>

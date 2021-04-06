@@ -60,9 +60,12 @@ const Text = styled.div`
     `}
 `;
 
-const TodoItem = ({ todo, onToggle }) => {
+const TodoItem = ({ todo, onToggle, onDelete }) => {
   const handleToggle = () => {
     onToggle(todo);
+  };
+  const handleDelete = () => {
+    onDelete(todo);
   };
 
   const { text, done } = todo;
@@ -72,7 +75,7 @@ const TodoItem = ({ todo, onToggle }) => {
         {done && <MdDone />}
       </CheckCircle>
       <Text done={done}>{text}</Text>
-      <RemoveBlock>
+      <RemoveBlock onClick={handleDelete}>
         <MdDelete />
       </RemoveBlock>
     </ItemBlock>
