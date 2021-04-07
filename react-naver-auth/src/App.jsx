@@ -8,6 +8,7 @@ import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SingUpPage';
 
 function App() {
+  const [cookies, setCookies, removeCookie] = useCookies(['name']);
   const [users, setUser] = useState([
     {
       id: 'gyu',
@@ -15,9 +16,6 @@ function App() {
       name: '김승규',
     },
   ]);
-  const [cookies, setCookies, removeCookie] = useCookies(['name']);
-
-  console.log('cookies', cookies);
 
   const onSignUp = (user) => {
     setUser([...users, user]);

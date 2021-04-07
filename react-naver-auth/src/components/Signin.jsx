@@ -33,15 +33,13 @@ const Login = ({ history, users, onMakeCookie }) => {
     const id = idInputRef.current.state.value;
     const password = passwordInputRef.current.state.value;
     const user = users.filter((user) => user.id === id && user.password === password);
-    // console.log();
 
     if (user.length === 0) {
       alert('로그인 실패');
       return;
     }
 
-    console.log(user);
-    // 로그인 성공
+    // 로그인 성공 시
     alert('로그인 성공');
     onMakeCookie(user[0].name);
     history.push('/');

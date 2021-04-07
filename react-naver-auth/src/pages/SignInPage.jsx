@@ -13,7 +13,6 @@ const globalStyle = css`
 `;
 
 const SignInPage = ({ history, users, onMakeCookie }) => {
-  // console.log(onSetCookie);
   return (
     <>
       <Global styles={globalStyle} />

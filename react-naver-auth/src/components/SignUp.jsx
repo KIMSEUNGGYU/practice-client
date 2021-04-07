@@ -54,9 +54,9 @@ const SignUp = ({ history, onSignUp }) => {
 
   return (
     <Main>
-      <LabelText for="id">아이디</LabelText>
+      <LabelText htmlFor="id">아이디</LabelText>
       <StyledInput ref={idInputRef} size="large" placeholder="아이디" id="id" />
-      <LabelText for="password">비밀번호</LabelText>
+      <LabelText htmlFor="password">비밀번호</LabelText>
       <StyledInput
         ref={passwordInputRef}
         size="large"
@@ -64,7 +64,7 @@ const SignUp = ({ history, onSignUp }) => {
         id="password"
         type="password"
       />
-      <LabelText for="re-password">비밀번호 재확인</LabelText>
+      <LabelText htmlFor="re-password">비밀번호 재확인</LabelText>
       <StyledInput
         ref={rePasswordInputRef}
         size="large"
@@ -72,7 +72,7 @@ const SignUp = ({ history, onSignUp }) => {
         id="re-password"
         type="password"
       />
-      <LabelText for="name">이름</LabelText>
+      <LabelText htmlFor="name">이름</LabelText>
       <StyledInput ref={nameInputRef} size="large" placeholder="이름" id="name" />
 
       <Button size="large" type="primary" style={{ width: '100%' }} onClick={handleCreateUser}>

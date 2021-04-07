@@ -67,41 +67,6 @@ const ListNav = styled.li`
     `};
 `;
 
-const menu = [
-  {
-    text: '메일',
-    fix: true,
-  },
-  {
-    text: '카페',
-    fix: true,
-  },
-  {
-    text: '블로그',
-    fix: true,
-  },
-  {
-    text: '지식iN',
-    fix: true,
-  },
-  {
-    text: '쇼핑',
-    fix: true,
-  },
-  {
-    text: 'Pay',
-    fix: true,
-  },
-  {
-    text: 'TV',
-    fix: true,
-  },
-  {
-    text: '사전',
-    fix: false,
-  },
-];
-
 const MainHeader = () => {
   return (
     <Header>
