@@ -2,7 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Header = styled.header`
-  padding: 105px 53px;
+  margin-top: 105px;
+  display: flex;
+  justify-content: center;
 `;
 const Logo = styled.div`
   background: url('./pc_sp_login_190522.png') no-repeat;

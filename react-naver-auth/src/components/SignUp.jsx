@@ -2,8 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Input, Button } from 'antd';
 
-import LogoHeader from '@components/LogoHeader';
-
 const ContentsBlock = styled.div`
   margin: 0 auto;
   margin-top: 70px;
@@ -31,7 +29,6 @@ const StyledInput = styled(Input)`
 
 const SignUp = () => (
   <ContentsBlock>
-    <LogoHeader />
     <Main>
       <LabelText for="id">아이디</LabelText>
       <StyledInput size="large" placeholder="아이디" id="id" />

@@ -1,26 +1,26 @@
 import React from 'react';
 import './App.less';
-// import SignIn from '@components/Signin';
-// import SignUp from '@components/SignUp';
-import Main from '@components/Main';
-import { css, Global } from '@emotion/react';
-import theme from '@src/theme';
+import { Switch, Route } from 'react-router-dom';
 
-const globalStyle = css`
-  body {
-    background: ${theme.backgoundColor};
-    height: 100vh;
-  }
-`;
+import MainPage from '@pages/MainPage';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SingUpPage';
 
 function App() {
   return (
-    <>
-      <Global styles={globalStyle} />
-      <Main />
-      {/* <SignUp /> */}
-      {/* <SignIn /> */}
-    </>
+    <Switch>
+      <Route path="/" component={MainPage} exact />
+      <Route path="/signin" component={SignInPage} />
+      <Route path="/signup" component={SignUpPage} />
+      <Route
+        render={({ location }) => (
+          <>
+            <h1>해당 페이지는 존재하지 않습니다.</h1>
+            <p>path: {location.pathname}</p>
+          </>
+        )}
+      />
+    </Switch>
   );
 }
 

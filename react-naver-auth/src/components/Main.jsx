@@ -1,10 +1,7 @@
 import React from 'react';
+import { Button } from 'antd';
 import { css, Global } from '@emotion/react';
 import styled from '@emotion/styled';
-import theme from '@src/theme';
-import { Button } from 'antd';
-
-import MainHeader from '@components/MainHeader';
 
 const globalStyle = css`
   body {
@@ -53,7 +50,6 @@ const Main = () => {
   return (
     <>
       <Global styles={globalStyle} />
-      <MainHeader />
       <MainBlock>
         <ContentsSection />
         <LoginSection>
