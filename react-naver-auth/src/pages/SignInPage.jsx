@@ -1,6 +1,6 @@
 import React from 'react';
 import LogoHeader from '@components/LogoHeader';
-import SignIn from '@components/SignIn';
+import SignIn from '@components/Signin';
 
 import { css, Global } from '@emotion/react';
 import theme from '@src/theme';
