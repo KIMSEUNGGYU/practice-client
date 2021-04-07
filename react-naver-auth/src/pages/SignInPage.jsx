@@ -12,12 +12,13 @@ const globalStyle = css`
   }
 `;
 
-const SignInPage = ({ history }) => {
+const SignInPage = ({ history, users, onMakeCookie }) => {
+  // console.log(onSetCookie);
   return (
     <>
       <Global styles={globalStyle} />
       <LogoHeader history={history} />
-      <SignIn history={history} />
+      <SignIn history={history} users={users} onMakeCookie={onMakeCookie} />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from '@emotion/styled';
 import { Input, Button } from 'antd';
 
@@ -24,13 +24,34 @@ const SingupButton = styled.button`
   color: #8e8e8e;
 `;
 
-const Login = ({ history }) => {
+const Login = ({ history, users, onMakeCookie }) => {
+  const idInputRef = useRef();
+  const passwordInputRef = useRef();
+
   const goSignUp = () => history.push('signup');
+  const handleSignIn = () => {
+    const id = idInputRef.current.state.value;
+    const password = passwordInputRef.current.state.value;
+    const user = users.filter((user) => user.id === id && user.password === password);
+    // console.log();
+
+    if (user.length === 0) {
+      alert('로그인 실패');
+      return;
+    }
+
+    console.log(user);
+    // 로그인 성공
+    alert('로그인 성공');
+    onMakeCookie(user[0].name);
+    history.push('/');
+  };
+
   return (
     <Main>
-      <InputStyle size="large" placeholder="아이디" />
-      <InputStyle size="large" placeholder="비밀번호" type="password" />
-      <Button size="large" type="primary" style={{ width: '100%' }}>
+      <InputStyle ref={idInputRef} size="large" placeholder="아이디" />
+      <InputStyle ref={passwordInputRef} size="large" placeholder="비밀번호" type="password" />
+      <Button size="large" type="primary" style={{ width: '100%' }} onClick={handleSignIn}>
         로그인
       </Button>
       <SingupButton onClick={goSignUp}>회원가입</SingupButton>

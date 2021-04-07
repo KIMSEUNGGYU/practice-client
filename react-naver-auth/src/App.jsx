@@ -1,17 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.less';
 import { Switch, Route } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 import MainPage from '@pages/MainPage';
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SingUpPage';
 
 function App() {
+  const [users, setUser] = useState([
+    {
+      id: 'gyu',
+      password: 'gyu',
+      name: '김승규',
+    },
+  ]);
+  const [cookies, setCookies, removeCookie] = useCookies(['name']);
+
+  console.log('cookies', cookies);
+
+  const onSignUp = (user) => {
+    setUser([...users, user]);
+  };
+
+  const onMakeCookie = (newName) => {
+    setCookies('name', newName, { path: '/' });
+  };
+
+  const onRemoveCookie = () => {
+    removeCookie('name');
+  };
+
   return (
     <Switch>
-      <Route path="/" component={MainPage} exact />
-      <Route path="/signin" component={SignInPage} />
-      <Route path="/signup" component={SignUpPage} />
+      <Route
+        path="/"
+        exact
+        render={(props) => (
+          <MainPage {...props} cookies={cookies} onRemoveCookie={onRemoveCookie} />
+        )}
+      />
+      <Route
+        path="/signin"
+        render={(props) => <SignInPage {...props} users={users} onMakeCookie={onMakeCookie} />}
+      />
+      <Route path="/signup" render={(props) => <SignUpPage {...props} onSignUp={onSignUp} />} />
       <Route
         render={({ location }) => (
           <>
