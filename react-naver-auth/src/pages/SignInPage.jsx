@@ -12,12 +12,12 @@ const globalStyle = css`
   }
 `;
 
-const SignInPage = () => {
+const SignInPage = ({ history }) => {
   return (
     <>
       <Global styles={globalStyle} />
-      <LogoHeader />
-      <SignIn />
+      <LogoHeader history={history} />
+      <SignIn history={history} />
     </>
   );
 };

@@ -12,11 +12,11 @@ const globalStyle = css`
   }
 `;
 
-const SignUpPage = () => {
+const SignUpPage = ({ history }) => {
   return (
     <>
       <Global styles={globalStyle} />
-      <LogoHeader />
+      <LogoHeader history={history} />
       <SignUp />
     </>
   );

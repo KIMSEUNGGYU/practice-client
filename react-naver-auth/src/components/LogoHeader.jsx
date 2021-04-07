@@ -11,12 +11,16 @@ const Logo = styled.div`
   background-position: 0 0;
   width: 231px;
   height: 44px;
+  cursor: pointer;
 `;
 
-const LogoHeader = () => {
+const LogoHeader = ({ history }) => {
+  const goMain = () => {
+    history.push('/');
+  };
   return (
     <Header>
-      <Logo />
+      <Logo onClick={goMain} />
     </Header>
   );
 };

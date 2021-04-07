@@ -46,7 +46,12 @@ const StyledButton = styled(Button)`
   font-size: 16px;
 `;
 
-const Main = () => {
+const Main = ({ history }) => {
+  const goSignIn = () => {
+    // console.log(history);
+    // // console.log('fdsaf');
+    history.push('/signin');
+  };
   return (
     <>
       <Global styles={globalStyle} />
@@ -54,7 +59,7 @@ const Main = () => {
         <ContentsSection />
         <LoginSection>
           <Text>네이버를 더 안전하고 편리하게 이용하세요</Text>
-          <StyledButton size="large" type="primary">
+          <StyledButton size="large" type="primary" onClick={goSignIn}>
             로그인
           </StyledButton>
         </LoginSection>
