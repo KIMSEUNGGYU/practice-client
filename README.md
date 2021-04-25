@@ -11,19 +11,22 @@
   https://kimseunggyu.github.io/practice-client/js-authentication
 
 
-### 실행
-**clone**
-```sh
-git clone -b react-todo-list --single-branch https://github.com/KIMSEUNGGYU/practice-client.git
-```
+### 프로젝트 Clone
 
-**관련 패키지 설치**
-```sh
-npm install -D
-```
+- `js-todo-list`
 
-**실행**
-```sh
-npm start
-```
+  ```sh
+  git clone -b js-todo-list --single-branch https://github.com/KIMSEUNGGYU/practice-client.git
+  ```
+
+- `js-naver-auth`
+
+  ```sh
+  git clone -b js-naver-auth --single-branch https://github.com/KIMSEUNGGYU/practice-client.git
+  ```
+
+- `react-todo-list`
+  ```sh
+  git clone -b react-todo-list --single-branch https://github.com/KIMSEUNGGYU/practice-client.git
+  ```
 
