@@ -1,16 +1,10 @@
 import { useState } from 'react';
 import { css, Global } from '@emotion/react';
+
 import TodoTemplate from '@components/TodoTemplate';
 import TodoHead from '@src/components/TodoHead';
 import TodoList from '@components/TodoList';
 import TodoCreate from '@components/TodoCreate';
-
-const globalStyle = css`
-  body {
-    background: grey;
-    height: 100vh;
-  }
-`;
 
 function App() {
   const [todos, setTodos] = useState([
@@ -54,5 +48,12 @@ function App() {
     </>
   );
 }
+
+const globalStyle = css`
+  body {
+    background: grey;
+    height: 100vh;
+  }
+`;
 
 export default App;

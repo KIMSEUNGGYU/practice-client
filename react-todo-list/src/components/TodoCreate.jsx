@@ -4,6 +4,37 @@ import styled from '@emotion/styled';
 import theme from '@src/theme';
 import { MdAdd } from 'react-icons/md';
 
+const TodoCreate = ({ onAdd }) => {
+  const [open, setOpen] = useState(false);
+  const inputRef = useRef();
+
+  const onToggle = () => setOpen(!open);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    onAdd({
+      id: Date.now(),
+      text: inputRef.current.value,
+      done: false,
+    });
+    inputRef.current.value = '';
+  };
+
+  return (
+    <>
+      {open && (
+        <InsertFormPositioner>
+          <InsertForm onSubmit={onSubmit}>
+            <Input ref={inputRef} autoFocus placeholder="할 일을 입력 후, Enter 를 누르세요" />
+          </InsertForm>
+        </InsertFormPositioner>
+      )}
+      <CircleButton open={open} onClick={onToggle}>
+        <MdAdd />
+      </CircleButton>
+    </>
+  );
+};
+
 const InsertFormPositioner = styled.div`
   width: 100%;
   position: absolute;
@@ -72,39 +103,5 @@ const CircleButton = styled.button`
       transform: translate(-50%, 50%) rotate(45deg);
     `}
 `;
-
-const TodoCreate = ({ onAdd }) => {
-  const [open, setOpen] = useState(false);
-
-  const inputRef = useRef();
-
-  const onToggle = () => setOpen(!open);
-  const onSubmit = (event) => {
-    event.preventDefault();
-    onAdd({
-      id: Date.now(),
-      text: inputRef.current.value,
-      done: false,
-    });
-    // console.log(inputRef.current.value);
-
-    inputRef.current.value = '';
-  };
-
-  return (
-    <>
-      {open && (
-        <InsertFormPositioner>
-          <InsertForm onSubmit={onSubmit}>
-            <Input ref={inputRef} autoFocus placeholder="할 일을 입력 후, Enter 를 누르세요" />
-          </InsertForm>
-        </InsertFormPositioner>
-      )}
-      <CircleButton open={open} onClick={onToggle}>
-        <MdAdd />
-      </CircleButton>
-    </>
-  );
-};
 
 export default TodoCreate;

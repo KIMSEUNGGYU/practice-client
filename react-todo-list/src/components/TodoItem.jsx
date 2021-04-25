@@ -5,6 +5,28 @@ import styled from '@emotion/styled/macro';
 import { MdDone, MdDelete } from 'react-icons/md';
 import theme from '@src/theme';
 
+const TodoItem = ({ todo, onToggle, onDelete }) => {
+  const handleToggle = () => {
+    onToggle(todo);
+  };
+  const handleDelete = () => {
+    onDelete(todo);
+  };
+
+  const { text, done } = todo;
+  return (
+    <ItemBlock>
+      <CheckCircle done={done} onClick={handleToggle}>
+        {done && <MdDone />}
+      </CheckCircle>
+      <Text done={done}>{text}</Text>
+      <RemoveBlock onClick={handleDelete}>
+        <MdDelete />
+      </RemoveBlock>
+    </ItemBlock>
+  );
+};
+
 const RemoveBlock = styled.div`
   width: 32px;
   height: 32px;
@@ -59,27 +81,5 @@ const Text = styled.div`
       color: ${theme.checkTextColor};
     `}
 `;
-
-const TodoItem = ({ todo, onToggle, onDelete }) => {
-  const handleToggle = () => {
-    onToggle(todo);
-  };
-  const handleDelete = () => {
-    onDelete(todo);
-  };
-
-  const { text, done } = todo;
-  return (
-    <ItemBlock>
-      <CheckCircle done={done} onClick={handleToggle}>
-        {done && <MdDone />}
-      </CheckCircle>
-      <Text done={done}>{text}</Text>
-      <RemoveBlock onClick={handleDelete}>
-        <MdDelete />
-      </RemoveBlock>
-    </ItemBlock>
-  );
-};
 
 export default TodoItem;
